@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Customer Survey Form
+    </title>
+
+    <style>
+        h1 {
+            color: white;
+        }
+
+        #name,
+        #surname,
+        #submit,
+        #reset {
+            display: inline-block;
+        }
+
+        #name,
+        #submit {
+            margin-right: 40px;
+        }
+
+
+        body {
+            background-color: #007FFF;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        button {
+            background-color: #007FFF;
+            border: 1px solid #777;
+            color: white;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            height: 50px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Customer Survey Form</h1>
+
+    <form id="form" onsubmit="myFunction()">
+
+        <div class="form-control">
+            <div id="name">
+                <label for="fname" id="label-fname">
+				First Name
+			</label>
+
+                <input type="text"
+				id="fname"
+				placeholder="Enter your first name" required />
+
+            </div>
+            <div id="surname">
+                <label for="lname" id="label-lname">
+				Last Name
+			</label>
+
+                <input type="text"
+				id="lname"
+				placeholder="Enter your last name" required />
+
+            </div>
+        </div>
+
+
+        <div class="form-control">
+            <label for="email" id="label-email">
+				Email
+			</label>
+
+            <input type="email"
+				id="email"
+				placeholder="Enter your email" required />
+        </div>
+
+        <div class="form-control">
+            <label for="dob" id="label-dob">
+				Date of Birth
+			</label>
+
+            <input type="date"
+				id="dob" required />
+        </div>
+
+        <div class="form-control">
+            <label for="country" id="label-country">
+				Country
+			</label>
+
+            <select id="country">
+				<option value="England">England</option>
+				<option value="India">India</option>
+				<option value="Australia">
+					Australia
+				</option>
+				<option value="Other">Other</option>
+			</select>
+        </div>
+
+        <div class="form-control">
+            <label>
+                Gender
+            </label>
+
+            <label for="male">
+                <input type="radio"
+                       id="male"
+		       value="Male"
+                       name="gender" required>Male</input>
+            </label>
+            <label for="female">
+                <input type="radio"
+                       id="female"
+		       value="Female"
+                       name="gender">Female</input>
+            </label>
+
+        </div>
+
+        <div class="form-control">
+            <label for="profession" id="label-profession">
+				Profession
+			</label>
+
+            <input type="text"
+				id="profession"
+				placeholder="Enter your profession" required />
+        </div>
+
+        <div class="form-control">
+            <label for="mob" id="label-mob">
+				Mobile Number
+			</label>
+
+            <input type="tel" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
+				id="mob"
+				placeholder="Enter your mobile number" required />
+        </div>
+
+        <div id="submit">
+            <button id="submit" type="submit" value="submit">
+			Submit
+		</button>
+        </div>
+        <div id="reset">
+            <button id="reset" type="reset" value="reset">
+			Reset
+		</button>
+        </div>
+    </form>
+
+    <script>
+        function myFunction(){
+	var x = document.getElementsByName("gender");
+	var gender;
+	for (i = 0; i < x.length; i++) {
+                if (x[i].checked)
+                    gender=x[i].value;
+            }
+        alert("First Name: " + document.getElementById("fname").value + "\n" + "Last Name: " + document.getElementById("lname").value + "\n" + "Date of Birth: " + document.getElementById("dob").value + "\n" + "Email: " + document.getElementById("email").value + "\n" + "Country: " + document.getElementById("country").value + "\n" +"Gender: " + gender + "\n" + "Profession : " + document.getElementById("profession").value + "\n" + "Mobile number: " + document.getElementById("mob").value);
+       }
+    </script>
+</body>
+
+</html>

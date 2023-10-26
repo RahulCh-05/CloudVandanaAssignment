@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            height: 500px;
+            margin: auto;
+            margin-top: 125px;
+            width: 60%;
+            background-color: lightgray;
+            position: relative;
+        }
+
+        input[type="text"] {
+            padding: 20px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            left: 50%;
+            margin-right: -50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        td {
+            padding: 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 20px 40px;
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+        }
+
+        .cls {
+            background-color: grey;
+        }
+
+        .cls1 {
+            background-color: #00A693;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td colspan="3">
+                <input type="text" id="display" readonly>
+            </td>
+            <td><button class="cls1" onclick="clearDisplay()">AC</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="appendToDisplay('1')">1</button></td>
+            <td><button onclick="appendToDisplay('2')">2</button></td>
+            <td><button onclick="appendToDisplay('3')">3</button></td>
+            <td><button class="cls" onclick="appendToDisplay('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="appendToDisplay('4')">4</button></td>
+            <td><button onclick="appendToDisplay('5')">5</button></td>
+            <td><button onclick="appendToDisplay('6')">6</button></td>
+            <td><button class="cls" onclick="appendToDisplay('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="appendToDisplay('7')">7</button></td>
+            <td><button onclick="appendToDisplay('8')">8</button></td>
+            <td><button onclick="appendToDisplay('9')">9</button></td>
+            <td><button class="cls" onclick="appendToDisplay('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="appendToDisplay('0')">0</button></td>
+            <td><button onclick="appendToDisplay('.')">.</button></td>
+            <td><button onclick="calculate()">=</button></td>
+            <td><button class="cls" onclick="appendToDisplay('+')">+</button></td>
+        </tr>
+    </table>
+    <script>
+        let display = document.getElementById('display');
+         
+         function appendToDisplay(value) {
+         	display.value += value;
+         }
+         
+         function clearDisplay() {
+         	display.value = '';
+         }
+         
+         function calculate() {
+         	try {
+         		display.value = eval(display.value);
+         	} catch (error) {
+         		display.value = 'Error';
+         	}
+         }
+    </script>
+</body>
+
+</html>
