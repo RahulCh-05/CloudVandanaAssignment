@@ -15,17 +15,21 @@
         #surname,
         #submit,
         #reset {
-            display: inline-block;
+            display: inline-block;   
         }
+
+	#name, 
+	#surname {
+	    width: 42%;
+	}
+
+	#name {
+	    margin-right: 58px;
+	}
 
         #submit {
             margin-right: 40px;
         }
-
-	#name {
-            margin-right: 75px;
-        }
-
 
         body {
             background-color: #007FFF;
@@ -102,7 +106,7 @@
 				placeholder="Enter your first name" required />
 
             </div>
-            <div id="surname">
+	    <div id="surname">
                 <label for="lname" id="label-lname">
 				Last Name
 			</label>
